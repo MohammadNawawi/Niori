@@ -3,6 +3,8 @@ import styles from "./Login.module.scss";
 import { useRouter } from "next/router";
 import { FormEvent, useState } from "react";
 import { signIn } from "next-auth/react";
+import Input from "@/components/ui/Input";
+import Button from "@/components/ui/Button";
 
 const LoginView = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -41,37 +43,30 @@ const LoginView = () => {
       {error && <p className={styles.login__error}>{error}</p>}
       <div className={styles.login__form}>
         <form onSubmit={handleSubmit}>
-          <div className={styles.login__form__item}>
-            <label htmlFor="email">Email</label>
-            <input
-              name="email"
-              id="email"
-              type="email"
-              className={styles.login__form__item__input}
-            />
-          </div>
-          <div className={styles.login__form__item}>
-            <label htmlFor="password">password</label>
-            <input
-              name="password"
-              id="password"
-              type="password"
-              className={styles.login__form__item__input}
-            />
-          </div>
-          <button type="submit" className={styles.login__form__button}>
+          <Input label="Email" name="email" type="email" placeholder="Email" />
+          <Input
+            label="Password"
+            name="password"
+            type="password"
+            placeholder="Password"
+          />
+          <Button
+            variant="primary"
+            type="submit"
+            className={styles.login__form__button}
+          >
             {isLoading ? "Loading..." : "Login"}
-          </button>
+          </Button>
         </form>
         <hr className={styles.login__form__devider} />
-        <div className={styles.login__form__other__button}>
-          <button
+        <div className={styles.login__form__other}>
+          <Button
             type="button"
-            className={styles.login__form__button}
+            className={styles.login__form__other__button}
             onClick={() => signIn("google", { callbackUrl, redirect: false })}
           >
             Login With Google
-          </button>
+          </Button>
         </div>
       </div>
 
