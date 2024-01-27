@@ -1,0 +1,36 @@
+.sidebar {
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  width: 20vw;
+  height: 100vh;
+  &__top {
+    &__title {
+      margin-bottom: 40px;
+    }
+    &__lists {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      &__item {
+        border-radius: 10px;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: 0.3s;
+        padding: 10px 15px;
+        &:hover {
+          background-color: #fff;
+          color: #000;
+          transition: 0.3s;
+          cursor: pointer;
+        }
+        &__active {
+          background-color: #fff;
+          color: #000;
+        }
+      }
+    }
+  }
+}

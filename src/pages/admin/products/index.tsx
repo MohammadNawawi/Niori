@@ -1,7 +1,14 @@
+import AdminLayout from "@/components/layouts/AdminLayout";
 import React from "react";
 
-const AdminProductsPage = () => {
-  return <div>AdminProductsPage</div>;
+const AdminProductPage = () => {
+  return (
+    <AdminLayout>
+      <div>
+        <div>AdminPages</div>
+      </div>
+    </AdminLayout>
+  );
 };
 
-export default AdminProductsPage;
+export default AdminProductPage;
