@@ -4,9 +4,13 @@
   padding: 20px;
   width: 20vw;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   &__top {
     &__title {
       margin-bottom: 40px;
+      font-size: 24px;
     }
     &__lists {
       display: flex;
@@ -31,6 +35,14 @@
           color: #000;
         }
       }
+    }
+  }
+  &__bottom {
+    width: 100%;
+    &__button {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
     }
   }
 }
